@@ -13,12 +13,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       show: false,
+      title : " ",
+      image_url : " ",
+      description : " ",
     };
-    this.title = " ";
-    this.image_url = " ";
-    this.description = " ";
-    this.keyword = " ";
-    this.horns = " ";
   }
 
   handleClose = () => {
@@ -30,10 +28,10 @@ class App extends React.Component {
   handleShow = (title, imgurl, description) => {
     this.setState({
       show: true,
+     title : title,
+      image_url : imgurl,
+      description : description,
     });
-    this.title = title;
-    this.image_url = imgurl;
-    this.description = description;
   };
 
   render() {
@@ -44,9 +42,9 @@ class App extends React.Component {
         <Footer />
         <SelectedBeast
           show={this.state.show}
-          image_url={this.image_url}
-          title={this.title}
-          description={this.description}
+          image_url={this.state.image_url}
+          title={this.state.title}
+          description={this.state.description}
           keyword={this.keyword}
           horns={this.horns}
           handleClose={this.handleClose}
