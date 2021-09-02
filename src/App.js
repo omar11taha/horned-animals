@@ -8,14 +8,13 @@ import hornedAnimals from "./assest/data.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       show: false,
-      title : " ",
-      image_url : " ",
-      description : " ",
+      title: " ",
+      image_url: " ",
+      description: " ",
     };
   }
 
@@ -28,12 +27,12 @@ class App extends React.Component {
   handleShow = (title, imgurl, description) => {
     this.setState({
       show: true,
-     title : title,
-      image_url : imgurl,
-      description : description,
+      title: title,
+      image_url: imgurl,
+      description: description,
     });
   };
-// test
+  // test
   render() {
     return (
       <div className="App">
