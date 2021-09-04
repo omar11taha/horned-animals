@@ -15,6 +15,7 @@ class App extends React.Component {
       title: " ",
       image_url: " ",
       description: " ",
+      data: hornedAnimals,
     };
   }
 
@@ -32,12 +33,28 @@ class App extends React.Component {
       description: description,
     });
   };
-  // test
+
+  FilterData = (filter) => {
+    if (filter.length > 0) {
+      this.setState({
+        data: filter,
+      });
+    } else {
+      this.setState({
+        data: hornedAnimals,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Main animals={hornedAnimals} showFunction={this.handleShow} />
+        <Main
+          animals={this.state.data}
+          showFunction={this.handleShow}
+          FilterData={this.FilterData}
+        />
         <Footer />
         <SelectedBeast
           show={this.state.show}
